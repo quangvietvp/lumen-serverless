@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.0",
         "bref/bref": "^1.5",
+        "bref/extra-php-extensions": "^0.11.27",
         "bref/laravel-bridge": "^1.2",
         "google/cloud-firestore": "^1.21",
         "kreait/laravel-firebase": "^4.1",

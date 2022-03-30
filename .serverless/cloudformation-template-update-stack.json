@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lumen/dev/1646879565548-2022-03-10T02:32:45.548Z/lumen.zip"
+          "S3Key": "serverless/lumen/dev/1648663454704-2022-03-30T18:04:14.704Z/lumen.zip"
         },
         "Handler": "public/index.php",
         "Runtime": "provided.al2",
@@ -181,7 +181,8 @@
           ]
         },
         "Layers": [
-          "arn:aws:lambda:us-east-1:209497400698:layer:php-80-fpm:32"
+          "arn:aws:lambda:us-east-1:209497400698:layer:php-80-fpm:33",
+          "arn:aws:lambda:us-east-1:403367587399:layer:grpc-php-80:4"
         ]
       },
       "DependsOn": [
@@ -195,7 +196,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lumen/dev/1646879565548-2022-03-10T02:32:45.548Z/lumen.zip"
+          "S3Key": "serverless/lumen/dev/1648663454704-2022-03-30T18:04:14.704Z/lumen.zip"
         },
         "Handler": "artisan",
         "Runtime": "provided.al2",
@@ -209,32 +210,33 @@
           ]
         },
         "Layers": [
-          "arn:aws:lambda:us-east-1:209497400698:layer:php-80:32",
-          "arn:aws:lambda:us-east-1:209497400698:layer:console:57"
+          "arn:aws:lambda:us-east-1:209497400698:layer:php-80:33",
+          "arn:aws:lambda:us-east-1:209497400698:layer:console:58",
+          "arn:aws:lambda:us-east-1:403367587399:layer:grpc-php-80:4"
         ]
       },
       "DependsOn": [
         "ArtisanLogGroup"
       ]
     },
-    "WebLambdaVersionjDzQAahs1yypKcwUm23C8dLolv4oKas6tGRwDoeLxR0": {
+    "WebLambdaVersionHPTSVVAYVZ4HrxY3petycjKr2k7TVqgxOi9THe6e8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WebLambdaFunction"
         },
-        "CodeSha256": "RzITMM03/0aEbX4xpfAiF9xdYQ7ZtdhzIwN1aZSEWU0="
+        "CodeSha256": "LCxzhUvkZL/cdDU/LIpejyv3rxDrnSOgCOBeqxmnOEI="
       }
     },
-    "ArtisanLambdaVersionuM4d3fbvYAj6qZZLwTa6sScU7xCrmv1AUKmxwpwIcc": {
+    "ArtisanLambdaVersionS4C3M44NbWmP9tLDqXE1IScAasnj6eLPqFZHG4gX4U": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ArtisanLambdaFunction"
         },
-        "CodeSha256": "RzITMM03/0aEbX4xpfAiF9xdYQ7ZtdhzIwN1aZSEWU0="
+        "CodeSha256": "LCxzhUvkZL/cdDU/LIpejyv3rxDrnSOgCOBeqxmnOEI="
       }
     },
     "HttpApi": {
@@ -345,7 +347,7 @@
     "WebLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WebLambdaVersionjDzQAahs1yypKcwUm23C8dLolv4oKas6tGRwDoeLxR0"
+        "Ref": "WebLambdaVersionHPTSVVAYVZ4HrxY3petycjKr2k7TVqgxOi9THe6e8"
       },
       "Export": {
         "Name": "sls-lumen-dev-WebLambdaFunctionQualifiedArn"
@@ -354,7 +356,7 @@
     "ArtisanLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ArtisanLambdaVersionuM4d3fbvYAj6qZZLwTa6sScU7xCrmv1AUKmxwpwIcc"
+        "Ref": "ArtisanLambdaVersionS4C3M44NbWmP9tLDqXE1IScAasnj6eLPqFZHG4gX4U"
       },
       "Export": {
         "Name": "sls-lumen-dev-ArtisanLambdaFunctionQualifiedArn"

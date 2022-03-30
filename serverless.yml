@@ -7,7 +7,6 @@ provider:
   # The stage of the application, e.g. dev, production, staging… ('dev' is the default)
   stage: dev
   runtime: provided.al2
-  lambdaHashingVersion: 20201221
 
 package:
   # Directories to exclude from deployment
@@ -25,6 +24,7 @@ functions:
     timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
     layers:
       - ${bref:layer.php-80-fpm}
+      - ${bref-extra:grpc-php-80}
     events:
       - httpApi: '*'
   # This function lets us run artisan commands in Lambda
@@ -34,7 +34,8 @@ functions:
     layers:
       - ${bref:layer.php-80} # PHP
       - ${bref:layer.console} # The "console" layer
-
+      - ${bref-extra:grpc-php-80}
 plugins:
   # We need to include the Bref plugin
   - ./vendor/bref/bref
+  - ./vendor/bref/extra-php-extensions # <----- Add the extra Serverless plugin
